@@ -695,6 +695,7 @@ body {
 .chiller-theme .sidebar-footer > a:last-child {
   border-right: none;
 }
+
 /* 404 error page  */
 .error-message i {
   font-size: 88px;
