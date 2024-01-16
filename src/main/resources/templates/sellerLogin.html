@@ -18,7 +18,7 @@
         <div class="login-left">
           <div class="login-left-box">
             <h2 class="login-left-head">Login</h2>
-            <form action="/adminlogin" method="post">
+            <form action="/seller-login" method="post">
             <div class="login-form">
               <p th:if="${error}" style="color: red" th:text="${error}"></p>
               <div class="input-group input-group-sm mb-3">
@@ -76,7 +76,10 @@
             </div>
             </form>
             <div class="login-left-notice">
-              Don’t have an account yet? <a href="adminSignup">Sign Up</a>
+              Wanted to be our business partner? <a href="/seller-signup">Sign Up</a>
+            </div>
+            <div class="login-left-notice">
+              Not a seller? <a href="/user-login">click here</a>
             </div>
           </div>
         </div>

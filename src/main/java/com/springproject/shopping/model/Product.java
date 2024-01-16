@@ -13,14 +13,14 @@ import jakarta.persistence.Table;
 public class Product {
 	@Id
 	@GeneratedValue
-	int id;
-	String name;
-	float price;
-	String brand;
+	private long id;
+	private String name;
+	private float price;
+	private String brand;
 	@Lob
-	String description;
+	private String description;
 	@Lob
-	byte[] picture;
+	private byte[] picture;
 	String warrenty;
 
 	// This connects the seller to product table
@@ -28,11 +28,11 @@ public class Product {
 	@JoinColumn(name = "seller_id")
 	private Seller seller;
 
-	public int getId() {
+	public long getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 

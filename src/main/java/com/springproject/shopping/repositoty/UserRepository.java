@@ -2,10 +2,10 @@ package com.springproject.shopping.repositoty;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.springproject.shopping.model.Admin;
+import com.springproject.shopping.model.User;
 
-public interface AdminRepository extends JpaRepository<Admin, Integer> {
-	Admin findByEmail(String email);
+public interface UserRepository extends JpaRepository<User, Long> {
+	User findByEmail(String email);
 
 	boolean existsByEmail(String email);
 

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Sign Up - Routine</title>
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+<link rel="stylesheet" href="css/bootstrap.min.css" />
+<link rel="stylesheet" href="css/style.css" />
+<link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body>
+	<div class="container-fluid">
+		<div class="d-flex justify-content-between">
+			<div class="login-left">
+				<div class="login-left-box">
+					<h2 class="login-left-head">Sign Up</h2>
+					<form action="/seller-signup" method="post">
+						<div class="login-form">
+						<p th:if="${dupError}" style="color: red" th:text="${dupError}"></p>
+							<div class="sign-up-names">
+								<div class="input-group input-group-sm">
+									<input type="text"
+										class="form-control form-login sign-up-border me-4 input-user-box"
+										aria-label="Sizing example input"
+										aria-describedby="inputGroup-sizing-sm"
+										placeholder="Company Name" name="companyName" required />
+								</div>
+								<div class="input-group input-group-sm">
+									<input type="text"
+										class="form-control form-login sign-up-border me-4 input-user-box"
+										aria-label="Sizing example input"
+										aria-describedby="inputGroup-sizing-sm"
+										placeholder="Owner Name" name="ownerName" required />
+								</div>
+							</div>
+							
+							<div class="input-group input-group-sm mb-3 mt-5">
+								<input type="email"
+									class="form-control form-login remove-border-box input-user-box"
+									aria-label="Sizing example input"
+									aria-describedby="inputGroup-sizing-sm" placeholder="Company E-mail "
+									name="email" required />
+							</div>
+							<div class="input-group input-group-sm mb-3 mt-5">
+								<input type="email"
+									class="form-control form-login remove-border-box input-user-box"
+									aria-label="Sizing example input"
+									aria-describedby="inputGroup-sizing-sm" placeholder="Owner E-mail "
+									name="ownerEmail" required />
+							</div>
+							<div class="input-group input-group-sm mb-3 mt-5">
+								<input type="text"
+									class="form-control form-login remove-border-box input-user-box"
+									aria-label="Sizing example input"
+									aria-describedby="inputGroup-sizing-sm" placeholder="Company Number"
+									name="phone" required />
+							</div>
+							
+							<p th:if="${error}" style="color: red" th:text="${error}"></p>
+							<div class="input-group input-group-sm mb-3 mt-5">
+								<input type="password"
+									class="form-control form-login remove-border-box input-pw-box"
+									aria-label="Sizing example input"
+									aria-describedby="inputGroup-sizing-sm" placeholder="Password"
+									required id="id_password" name="password" /> <i
+									class="fa-solid fa-eye eye-btn" id="togglePassword1"></i>
+							</div>
+							<p th:if="${error}" style="color: red" th:text="${error}"></p>
+							<div class="input-group input-group-sm mb-3 mt-5">
+								<input type="password"
+									class="form-control form-login remove-border-box input-pw-box"
+									aria-label="Sizing example input"
+									aria-describedby="inputGroup-sizing-sm"
+									placeholder="Re-enter password" required id="re_id_password"
+									name="password2" /> <i class="fa-solid fa-eye eye-btn"
+									id="togglePassword2"></i>
+							</div>
+						</div>
+						<div class="btn-login-left">
+							<button type="submit" class="btn btn-login-page">
+								Sign Up <i class="fa-solid fa-angle-right btn-arrow-right"></i>
+							</button>
+						</div>
+						<div class="login-left-notice">
+							Already have a seller account? <a href="/user-login">Login</a>
+						</div>
+						<div class="login-left-notice">
+							Not a Seller? <a href="/user-signup">Click here</a>
+						</div>
+					</form>
+				</div>
+			</div>
+			<div class="login-right vl"></div>
+		</div>
+	</div>
+
+	<script src="js/script.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+</body>
+</html>

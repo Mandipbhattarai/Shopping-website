@@ -22,7 +22,7 @@
         <nav id="sidebar" class="sidebar-wrapper">
           <div class="sidebar-content">
             <div class="sidebar-brand">
-              <a href="/home">Admin Pannel</a>
+              <a href="/home">User Panel</a>
               <div id="close-sidebar">
                 <i class="fas fa-times"></i>
               </div>
@@ -31,15 +31,15 @@
               <div class="user-pic">
                 <img
                   class="img-responsive img-rounded"
-                   th:src="'data:image/jpg;base64,' + ${profilePicture}" alt="Profile Picture"
+                   th:src="'data:image/jpg;base64,' + ${session.activeUser.profilePictureBase64}" alt="Profile Picture"
                 />
               </div>
               <div class="user-info">
                 <span class="user-name"
-                  >[[${session.activeAdmin.firstName}]] 
-                  <strong>[[${session.activeAdmin.lastName}]]</strong>
+                  >[[${session.activeUser.firstName}]] 
+                  <strong>[[${session.activeUser.lastName}]]</strong>
                 </span>
-                <span class="user-role">Admin</span>
+                <span class="user-role">[[${session.activeUser.role}]]</span>
                 <span class="user-status">
                   <i class="fa fa-circle"></i>
                   <span>Online</span>
@@ -140,11 +140,11 @@
                 >7</span
               >
             </a>
-            <a href="/logout">
+            <a href="#">
               <i class="fa fa-cog"></i>
               <span class="badge-sonar"></span>
             </a>
-            <a href="">
+            <a href="/logout">
               <i class="fa fa-power-off"></i>
             </a>
           </div>
@@ -157,7 +157,7 @@
             <div class="row">
               <div class="form-group col-md-12">
                 <p>
-                  Welcome to the Admin Dashboard of [Your Online Shopping Site],
+                  Welcome to the user Dashboard of [Your Online Shopping Site],
                   where you have a comprehensive view of your e-commerce
                   operations. This dashboard is designed to provide you with
                   valuable insights and tools to manage your online store

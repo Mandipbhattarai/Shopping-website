@@ -2,7 +2,7 @@
 <html xmlns:th="https://www.thymeleaf.org">
 <head>
     <meta charset="ISO-8859-1">
-    <title>Admin List</title>
+    <title>User List</title>
     <style>
     </style>
 </head>
@@ -11,7 +11,7 @@
     <div class="container">
         <div>
             <div>
-                <h1>Admin List</h1>
+                <h1>User List</h1>
             </div>
             <div>
                 <table>
@@ -26,20 +26,20 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr th:each="a : ${adminList}">
+                        <tr th:each="a : ${userList}">
                            
                             <td>[[${a.firstName}]]</td>
                             <td>[[${a.lastName}]]</td>
                             <td>[[${a.email}]]</td>
                             <td>[[${a.phone}]]</td>
                             <td>
-                                <a th:href="@{/admin/edit(id=${a.id})}">
+                                <a th:href="@{/user/edit(id=${a.id})}">
                                     <input type="Submit" value="Edit" class="btn btn-success">
                                 </a>
                                 
                                 <!-- Conditional rendering for delete link with confirmation -->
                                 <span th:if="${not #strings.isEmpty(a.id)}">
-                                    <a th:href="@{/admin/delete(id=${a.id})}" onclick="return confirm('Are you sure you want to delete?')">
+                                    <a th:href="@{/user/delete(id=${a.id})}" onclick="return confirm('Are you sure you want to delete?')">
                                         <input type="submit" value="Delete" class="btn btn-danger">
                                     </a>
                                 </span>

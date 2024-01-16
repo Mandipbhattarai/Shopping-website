@@ -9,33 +9,34 @@ import jakarta.persistence.Table;
 import jakarta.persistence.Transient;
 
 @Entity
-@Table(name = "admin_table")
-public class Admin {
+@Table(name = "user_table")
+public class User {
 	@Id
 	@GeneratedValue
-	int id;
-	String firstName;
-	String lastName;
+	private long id;
+	private String firstName;
+	private String lastName;
 	@Column(unique = true)
 	String email;
 	@Column(unique = true)
-	String phone;
-	String password;
+	private String phone;
+	private String role;
+	private String password;
 	@Transient
-	String password2;
+	private String password2;
 	@Lob
 	@Column(columnDefinition = "LONGBLOB")
-	byte[] profilePicture;
+	private byte[] profilePicture;
 //	 defining a variable that should not be in the database to store converted
 	// profile picture temporarily
 	@Transient
     private String profilePictureBase64;
 
-	public int getId() {
+	public long getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 
@@ -102,6 +103,16 @@ public class Admin {
 	public void setProfilePictureBase64(String profilePictureBase64) {
 		this.profilePictureBase64 = profilePictureBase64;
 	}
+
+	public String getRole() {
+		return role;
+	}
+
+	public void setRole(String role) {
+		this.role = role;
+	}
+
+	
 	
 
 }
