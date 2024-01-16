@@ -695,3 +695,24 @@ body {
 .chiller-theme .sidebar-footer > a:last-child {
   border-right: none;
 }
+/* 404 error page  */
+.error-message i {
+  font-size: 88px;
+}
+.error-message h2 {
+  font-size: 54px;
+  font-weight: 800;
+}
+
+.error-message h5 {
+  font-size: 20px;
+}
+
+.error-message p {
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.error-message a {
+  font-weight: 400;
+}
